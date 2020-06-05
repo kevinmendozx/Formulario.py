@@ -23,5 +23,6 @@ row = cursor.fetchone()
 #imprime el mensaje que envia la funcion
 print(Autenticacion(usuario,passs))
 
+
 #cierre de conexion a la base de datos
 cnxn.close()
