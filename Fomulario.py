@@ -3,6 +3,7 @@ def Autenticacion(Usuario,password):
         if row is not None:
             mensaje = "Existe el usuario"
         return(mensaje)
+
 #conexion a la base de datos
 import pyodbc
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server}', server='.', database='Warehouse',               
@@ -17,7 +18,9 @@ passs = "'"+input().upper()+"'"
 #Envio de query
 cursor.execute("SELECT * FROM usuario where upper(usuario) = %s and upper(pass) = %s " %(usuario,passs))
 
+#Carga respuesta de la query en lista
 row = cursor.fetchone() 
+#imprime el mensaje que envia la funcion
 print(Autenticacion(usuario,passs))
 
 #cierre de conexion a la base de datos
